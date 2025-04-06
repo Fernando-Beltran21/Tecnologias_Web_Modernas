@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web APIs | Tecnologías Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo_p.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                Tecnologías Web
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Temas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="web-apis.html">Web APIs</a></li>
+                            <li><a class="dropdown-item" href="microservicios.html">Microservicios</a></li>
+                            <li><a class="dropdown-item" href="desarrollo-web-api.html">Desarrollo Web API</a></li>
+                            <li><a class="dropdown-item" href="contenedores.html">Contenedores</a></li>
+                            <li><a class="dropdown-item" href="aplicaciones-nube.html">Aplicaciones en la Nube</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="hero-subpage bg-dark text-white py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/header.gif');">
+        <div class="container text-center">
+            <h1 class="display-4">Web APIs</h1>
+            <p class="lead">Interfaces de programación para la web</p>
+        </div>
+    </header>
+
+
+    <nav aria-label="breadcrumb" class="container mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Web APIs</li>
+        </ol>
+    </nav>
+
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <article>
+                    <h2>¿Qué son las Web APIs?</h2>
+                    <p class="lead">Una API (Interfaz de Programación de Aplicaciones Web) es un conjunto de reglas y protocolos que permiten que diferentes aplicaciones se comuniquen entre sí a través de internet.
+
+                        En otras palabras, una API web permite que un programa (como una aplicación móvil o una página web) obtenga, envíe o modifique información que está almacenada en otro sistema (como un servidor remoto o base de datos), sin necesidad de interactuar directamente con su código interno.</p>
+                    
+                    <img src="../img/diagrama_API.avif" alt="Diagrama de Web API" class="img-fluid rounded mb-4">
+                    
+                    <p>Las APIs web existen porque permiten crear aplicaciones modulares y reutilizables, facilitando la integración entre distintos servicios.
+                        Por ejemplo:
+                        
+                        Tu aplicación no necesita saber cómo funciona el motor de búsqueda de Google, solo necesita saber cómo hacerle una solicitud a la API de Google.
+                        
+                        Las APIs evitan duplicar lógica, porque puedes usar los servicios de terceros (como pagos, mapas, clima, etc.) directamente.</p>
+                    
+                    <h3 class="mt-4">¿Dónde se usan las APIs web?</h3>
+                    <p>Las APIs web se utilizan en una variedad de aplicaciones y servicios, incluyendo:</p>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item">Aplicaciones móviles (consultar productos, clima, ubicaciones)</li>
+                        <li class="list-group-item">Páginas web interactivas (buscar información en tiempo real)</li>
+                        <li class="list-group-item">Videojuegos (multijugador, estadísticas, tablas de puntuación)</li>
+                        <li class="list-group-item">Dispositivos IoT (como Alexa o Google Home)</li>
+                    </ul>
+                    
+                    <h3 class="mt-4">¿Cómo funciona una API web?</h3>
+                        <p class="lead">El cliente (por ejemplo, una app o navegador) hace una petición HTTP a un <strong>endpoint</strong> específico de la API. El servidor procesa la solicitud y devuelve datos estructurados (generalmente en JSON o XML).</p>
+
+                        <h3 class="mt-4"><i class="fas fa-code me-2 text-primary"></i>Ejemplo práctico</h3>
+                        <p>Obtención de datos de usuario mediante API REST:</p>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-light">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-bs-toggle="tab" href="#request">Request</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#response">Response</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="tab-content">
+                                    <!-- Petición -->
+                                    <div class="tab-pane fade show active" id="request">
+                                        <pre class="m-0 p-3"><code class="language-http">
+                        GET /usuarios/fer HTTP/1.1
+                        Host: api.ejemplo.com
+                        Accept: application/json
+                        Authorization: Bearer tu_token_de_acceso
+                                        </code></pre>
+                                    </div>
+                                    <!-- Respuesta -->
+                                    <div class="tab-pane fade" id="response">
+                                        <pre class="m-0 p-3"><code class="language-json">
+                        {
+                            "id": 1,
+                            "nombre": "Fernando",
+                            "edad": 21,
+                            "email": "fer@ejemplo.com",
+                            "activo": true,
+                            "roles": ["usuario", "editor"]
+                        }
+                                        </code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i> Este ejemplo muestra una API RESTful típica que sigue estos principios:
+                            <ul class="mt-2 mb-0">
+                                <li><strong>URL descriptiva</strong> (<code>/usuarios/{id}</code>)</li>
+                                <li><strong>Método HTTP</strong> adecuado (GET para leer datos)</li>
+                                <li><strong>Cabeceras</strong> para negociación de contenido</li>
+                            </ul>
+                        </div>
+
+                    <h3 class="mt-4">Características principales</h3>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item">Interfaz bien definida</li>
+                        <li class="list-group-item">Protocolos y formatos estándar (HTTP, REST, JSON)</li>
+                        <li class="list-group-item">Independencia del lenguaje</li>
+                        <li class="list-group-item">Escalabilidad</li>
+                        <li class="list-group-item">Seguridad integrada</li>
+                    </ul>
+                    
+                    <h3>Ejemplos de Web APIs populares</h3>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Google Maps API</h5>
+                                    <p class="card-text">Integra mapas interactivos en tu aplicación.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Twitter API</h5>
+                                    <p class="card-text">Accede a datos de Twitter y publica tweets.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">OpenWeatherMap</h5>
+                                    <p class="card-text">Te perimite dar datos sobre el clima.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Spotify API</h5>
+                                    <p class="card-text">Agregar musica y playlist.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Video explicativo</h3>
+                    <div class="ratio ratio-16x9 mb-4">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/u2Ms34GE14U?si=xnvkLl9qNaDT9Duo&amp;start=1" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="accordion mb-5" id="apiAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Tipos de Web APIs
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#apiAccordion">
+                                <div class="accordion-body">
+                                    <p>Existen varios tipos de APIs web según su arquitectura y protocolos:</p>
+                                    <ul>
+                                        <li><strong>REST</strong>: La más común, usa HTTP y JSON</li>
+                                        <li><strong>SOAP</strong>: Protocolo más antiguo basado en XML</li>
+                                        <li><strong>GraphQL</strong>: Alternativa moderna a REST</li>
+                                        <li><strong>WebSocket</strong>: Para conexiones persistentes</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="col-lg-4">
+                <aside class="bg-light p-4 rounded">
+                    <h4><i class="fas fa-check-circle me-2"></i>Características clave</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-exchange-alt me-2"></i>Usan HTTP como protocolo principal</li>
+                        <li class="mb-2"><i class="fas fa-code text-success me-2"></i>Devuelven datos usualmente en formato JSON o XML.</li>
+                        <li class="mb-2">
+                            <i class="fas fa-lightbulb text-warning me-2"></i>
+                            <strong>Usos comunes</strong>:
+                            <ul class="mt-2 ps-4">
+                                <li class="mb-2">
+                                    <i class="fas fa-user-lock me-2 text-purple"></i>
+                                    Autenticación (ej. OAuth con Google/Facebook)
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-map-marked-alt me-2 text-danger"></i>
+                                    Mapas (Google Maps API, Mapbox)
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-share-alt me-2 text-info"></i>
+                                    Redes sociales (Twitter, Instagram API)
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-cloud-sun me-2 text-primary"></i>
+                                    Datos en tiempo real (clima, finanzas)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <hr>
+                    
+                    <h4 class="text-security"><i class="fas fa-shield-alt me-2"></i>Mecanismos de Seguridad en APIs</h4>
+                    <ul class="list-unstyled security-list">
+                        <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-key fa-fw text-warning security-icon"></i>
+                                <div class="ms-3">
+                                    <strong>API Keys</strong>
+                                    <div class="text-muted small">Claves únicas para autenticación básica</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-user-lock fa-fw text-primary security-icon"></i>
+                                <div class="ms-3">
+                                    <strong>OAuth 2.0</strong>
+                                    <div class="text-muted small">Autorización delegada con flujos (Authorization Code, PKCE)</div>
+                                </div>
+                            </div>
+                        </li>
+                        
+                        <li class="mb-3">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-fingerprint fa-fw text-danger security-icon"></i>
+                                <div class="ms-3">
+                                    <strong>Tokens JWT</strong>
+                                    <div class="text-muted small">Tokens firmados digitalmente (RFC 7519)</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h4>Temas</h4>
+                    <div class="list-group">
+                        <a href="microservicios.html" class="list-group-item list-group-item-action">Microservicios</a>
+                        <a href="desarrollo-web-api.html" class="list-group-item list-group-item-action">Desarrollo de Web APIs</a>
+                        <a href="contenedores.html" class="list-group-item list-group-item-action">Contenedores</a>
+                        <a href="aplicaciones-nube.html" class="list-group-item list-group-item-action">Aplicaciones en la nube</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tecnologías Web</h5>
+                    <p>Sitio informativo sobre las tecnologías para el desarrollo web.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>ferbeltran2101@gmail.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 55 7608 0585</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Licenciatura en Informática y Tecnologías Computacionales. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web API | Tecnologías Web</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo_p.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                Tecnologías Web
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Temas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="web-apis.html">Web APIs</a></li>
+                            <li><a class="dropdown-item" href="microservicios.html">Microservicios</a></li>
+                            <li><a class="dropdown-item active" href="desarrollo-web-api.html">Desarrollo Web API</a></li>
+                            <li><a class="dropdown-item" href="contenedores.html">Contenedores</a></li>
+                            <li><a class="dropdown-item" href="aplicaciones-nube.html">Aplicaciones en la Nube</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-subpage bg-dark text-white py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/header.gif');">
+        <div class="container text-center">
+            <h1 class="display-4">Desarrollo de Web APIs</h1>
+            <p class="lead">Construyendo interfaces para la comunicación entre sistemas</p>
+        </div>
+    </header>
+
+    <nav aria-label="breadcrumb" class="container mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Desarrollo Web API</li>
+        </ol>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <article>
+                    <h2>Proceso de Desarrollo de una Web API</h2>
+                    <p class="lead">El desarrollo de una API web efectiva requiere planificación, diseño cuidadoso y atención a los estándares de la industria.</p>
+                    
+                    <img src="../img/desarollo_API.png" alt="Proceso de desarrollo de API" class="img-fluid rounded mb-4">
+                    
+                    <h3 class="mt-4">Principios de diseño RESTful</h3>
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-sitemap me-2"></i>Recursos</h5>
+                                    <p class="card-text">Todo es un recurso identificable por URI</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-exchange-alt me-2"></i>Stateless</h5>
+                                    <p class="card-text">Cada petición contiene toda la información necesaria</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-layer-group me-2"></i>Representaciones</h5>
+                                    <p class="card-text">Múltiples formatos (JSON, XML)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-link me-2"></i>Hipermedia</h5>
+                                    <p class="card-text">HATEOAS - Hipermedia como motor del estado de la aplicación</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Ejemplo de código</h3>
+                    <div class="card mb-4">
+                        <div class="card-header bg-dark text-white">
+                            <i class="fas fa-code me-2"></i>API RESTful en Node.js con Express
+                        </div>
+                        <div class="card-body">
+                            <pre><code class="language-javascript">
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+// Base de datos en memoria
+let products = [
+    { id: 1, name: 'Laptop', price: 1000 },
+    { id: 2, name: 'Mouse', price: 25 }
+];
+
+// Obtener todos los productos
+app.get('/api/products', (req, res) => {
+    res.json(products);
+});
+
+// Obtener un producto por ID
+app.get('/api/products/:id', (req, res) => {
+    const product = products.find(p => p.id === parseInt(req.params.id));
+    if (!product) return res.status(404).send('Producto no encontrado');
+    res.json(product);
+});
+
+// Crear un nuevo producto
+app.post('/api/products', (req, res) => {
+    const product = {
+        id: products.length + 1,
+        name: req.body.name,
+        price: req.body.price
+    };
+    products.push(product);
+    res.status(201).json(product);
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Servidor escuchando en puerto ${port}...`));
+                            </code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Mejores prácticas</h3>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item">Usar nombres en plural para recursos (/products en lugar de /product)</li>
+                        <li class="list-group-item">Utilizar verbos HTTP correctamente (GET, POST, PUT, DELETE)</li>
+                        <li class="list-group-item">Versionar tu API (/v1/products)</li>
+                        <li class="list-group-item">Implementar paginación para colecciones grandes</li>
+                        <li class="list-group-item">Proporcionar documentación completa</li>
+                    </ul>
+
+                    <h3>¿Qué es un JSON Web Token (JWT)?</h3>
+                    <p class="lead">Un JSON Web Token (JWT) es un formato estándar para enviar información de forma segura entre dos partes (como un cliente y un servidor) usando JSON y firmas digitales.
+                                    Se usa principalmente para autenticación y autorización, es decir, para verificar la identidad de un usuario y permitirle acceder a ciertas partes de una aplicación (por ejemplo, un panel de usuario o una API protegida).</p>
+                    <h3>¿Para qué se usa un JWT?</h3>
+                                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Autenticación</h5>
+                                    <p class="card-text">Después de iniciar sesión correctamente, el servidor genera un JWT y se lo devuelve al cliente.
+                                        El cliente lo guarda (en localStorage, por ejemplo) y lo envía en cada solicitud protegida.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Autorización</h5>
+                                    <p class="card-text">El servidor valida el token. Si es válido, permite el acceso a rutas privadas, de lo contrario, responde con "No autorizado".</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Video tutorial</h3>
+                    <div class="ratio ratio-16x9 mb-4">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/JD6VNRdGl98?si=g3CpwcAii14UlCvi" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="col-lg-4">
+                <aside class="bg-light p-4 rounded">
+                    <h4>Herramientas para probar APIs</h4>
+                    <div class="list-group mb-3">
+                        <a href="https://youtu.be/qsejysrhJiU?si=4G6FO73qZXIiRgta" class="list-group-item list-group-item-action">Postman</a>
+                        <a href="https://youtu.be/DkK4jOw7YLU?si=G-bjujyNWwpqxxna" class="list-group-item list-group-item-action">Insomnia</a>
+                        <a href="https://youtu.be/DSOi2Hs80Co?si=Fxadzc0hOFvmPpb5" class="list-group-item list-group-item-action">Swagger UI</a>
+                        <a href="https://youtu.be/aneQwvcClIM?si=kiG1FRZA4uht5apM" class="list-group-item list-group-item-action">cURL</a>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h4>Formatos comunes</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-file-code me-2"></i>JSON (JavaScript Object Notation)</li>
+                        <li class="mb-2"><i class="fas fa-file-code me-2"></i>XML (eXtensible Markup Language)</li>
+                        <li class="mb-2"><i class="fas fa-file-code me-2"></i>Protocol Buffers</li>
+                    </ul>
+                    
+                    <hr>
+                    
+                    <h4>Temas</h4>
+                    <div class="list-group">
+                        <a href="web-apis.html" class="list-group-item list-group-item-action">Web-APIs</a>
+                        <a href="microservicios.html" class="list-group-item list-group-item-action">Microservicios</a>
+                        <a href="contenedores.html" class="list-group-item list-group-item-action">Contenedores</a>
+                        <a href="aplicaciones-nube.html" class="list-group-item list-group-item-action">Aplicaciones en la Nube</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tecnologías Web</h5>
+                    <p>Sitio informativo sobre las últimas tecnologías para el desarrollo web.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>ferbeltran2101@gmail.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 55 7608 0585</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Licenciatura en Informática y Tecnologías Computacionales. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script personalizado -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

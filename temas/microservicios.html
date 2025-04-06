@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microservicios | Tecnologías Web</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../img/logo_p.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                Tecnologías Web
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Temas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="web-apis.html">Web APIs</a></li>
+                            <li><a class="dropdown-item active" href="microservicios.html">Microservicios</a></li>
+                            <li><a class="dropdown-item" href="desarrollo-web-api.html">Desarrollo Web API</a></li>
+                            <li><a class="dropdown-item" href="contenedores.html">Contenedores</a></li>
+                            <li><a class="dropdown-item" href="aplicaciones-nube.html">Aplicaciones en la Nube</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="hero-subpage bg-dark text-white py-5" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/header.gif');">
+        <div class="container text-center">
+            <h1 class="display-4">Microservicios</h1>
+            <p class="lead">Arquitectura para aplicaciones escalables y mantenibles</p>
+        </div>
+    </header>
+
+
+    <nav aria-label="breadcrumb" class="container mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Microservicios</li>
+        </ol>
+    </nav>
+
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <article>
+                    <h2>¿Qué son los Microservicios?</h2>
+                    <p class="lead">Los microservicios son una forma de diseñar aplicaciones donde se divide toda la aplicación en pequeños servicios independientes, cada uno encargado de una funcionalidad específica.
+
+                        Cada microservicio se desarrolla, prueba, despliega y escala por separado. Todos se comunican entre sí mediante APIs (normalmente APIs web REST o mensajes).</p>
+                    
+                        <img 
+                        src="../img/microservicios_arq.png" 
+                        alt="Arquitectura de Microservicios" 
+                        class="img-fluid rounded mb-4 w-75"
+                      >
+                    
+                    <h3 class="mt-4">Ventajas de los Microservicios</h3>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-expand-arrows-alt me-2"></i>Escalabilidad</h5>
+                                    <p class="card-text">Puedes escalar componentes individuales según la demanda.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-code-branch me-2"></i>Flexibilidad Tecnológica</h5>
+                                    <p class="card-text">Cada servicio puede usar la tecnología más adecuada.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Comparación con Arquitectura Monolítica</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-bordered table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Aspecto</th>
+                                    <th>Monolito</th>
+                                    <th>Microservicios</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Despliegue</td>
+                                    <td>Toda la aplicación como una unidad</td>
+                                    <td>Servicios independientes</td>
+                                </tr>
+                                <tr>
+                                    <td>Escalabilidad</td>
+                                    <td>Escala vertical</td>
+                                    <td>Escala horizontal</td>
+                                </tr>
+                                <tr>
+                                    <td>Fallas</td>
+                                    <td>Falla todo el sistema</td>
+                                    <td>Aislamiento de fallos</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h3>Patrones comunes</h3>
+                    <div class="accordion mb-5" id="microAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    API Gateway
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#microAccordion">
+                                <div class="accordion-body">
+                                    <p>El API Gateway actúa como punto de entrada único para todos los clientes. Es responsable de:</p>
+                                    <ul>
+                                        <li>Enrutamiento de solicitudes</li>
+                                        <li>Composición de respuestas</li>
+                                        <li>Protocolo de traducción</li>
+                                        <li>Autenticación y autorización</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Service Discovery
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#microAccordion">
+                                <div class="accordion-body">
+                                    <p>Mecanismo que permite a los microservicios descubrir la ubicación de otros servicios en la red.</p>
+                                    <p>Ejemplos: Eureka, Consul, ZooKeeper</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingthree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethree">
+                                    Database per Service Pattern
+                                </button>
+                            </h2>
+                            <div id="collapsethree" class="accordion-collapse collapse" aria-labelledby="headingthree" data-bs-parent="#microAccordion">
+                                <div class="accordion-body">
+                                    <p>Cada microservicio tiene su propia base de datos, no la comparte con otros y tiene los siguientes beneficios</p>
+                                    <ul>
+                                        <li>Independencia total entre servicios</li>
+                                        <li>Mejor escalabilidad</li>
+                                        <li>Evita que un cambio en un servicio rompa a los demás</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingfour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour">
+                                    Event-Driven Pattern
+                                </button>
+                            </h2>
+                            <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#microAccordion">
+                                <div class="accordion-body">
+                                    <p>En lugar de que los servicios se comuniquen directamente, lo hacen a través de eventos asincrónicos. Sus principales beneficios son:</p>
+                                    <ul>
+                                        <li>Menos acoplamiento entre servicios.</li>
+                                        <li>Mejor rendimiento y tolerancia a fallos.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Video explicativo</h3>
+                    <div class="ratio ratio-16x9 mb-4">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/1FsV0V00LBI?si=imNhWtpV98IK7O2g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="col-lg-4">
+                <aside class="bg-light p-4 rounded">
+                    <h4>Frameworks populares</h4>
+                    <div class="list-group mb-3">
+                        <a href="https://youtu.be/EfeK6Hpuz0I?si=NDhwulhP-rojY6r7" class="list-group-item list-group-item-action">Spring Boot (Java)</a>
+                        <a href="https://youtu.be/4tT9x948VlE?si=9MYdBTzw6X1I8Qw2" class="list-group-item list-group-item-action">Node.js</a>
+                        <a href="https://youtu.be/fkL2tU_qmiA?si=Q7--9dLh5eQ14NjK" class="list-group-item list-group-item-action">.NET Core</a>
+                    </div>
+                    
+                    <hr>
+                    
+                    <h4>Herramientas</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-server me-2"></i>Docker</li>
+                        <li class="mb-2"><i class="fas fa-network-wired me-2"></i>Kubernetes</li>
+                        <li class="mb-2"><i class="fas fa-cloud me-2"></i>Istio</li>
+                    </ul>
+                    
+                    <hr>
+
+                    <h4>Temas</h4>
+                    <div class="list-group">
+                        <a href="web-apis.html" class="list-group-item list-group-item-action">Web-APIs</a>
+                        <a href="desarrollo-web-api.html" class="list-group-item list-group-item-action">Desarrollo de Web APIs</a>
+                        <a href="contenedores.html" class="list-group-item list-group-item-action">Contenedores</a>
+                        <a href="aplicaciones-nube.html" class="list-group-item list-group-item-action">Aplicaciones en la nube</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tecnologías Web</h5>
+                    <p>Sitio informativo sobre las tecnologías para el desarrollo web.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>ferbeltran2101@gmail.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 55 7608 0585</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Licenciatura en Informática y Tecnologías Computacionales. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

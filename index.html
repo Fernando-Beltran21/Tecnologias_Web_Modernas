@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologías Web Modernas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo_p.png" alt="Logo" width="30" height="30" class="d-inline-block align-top">
+                Tecnologías Web
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Temas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="temas/web-apis.html">Web APIs</a></li>
+                            <li><a class="dropdown-item" href="temas/microservicios.html">Microservicios</a></li>
+                            <li><a class="dropdown-item" href="temas/desarrollo-web-api.html">Desarrollo Web API</a></li>
+                            <li><a class="dropdown-item" href="temas/contenedores.html">Contenedores</a></li>
+                            <li><a class="dropdown-item" href="temas/aplicaciones-nube.html">Aplicaciones en la Nube</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="--hero-bg: url('../img/header.gif')">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Tecnologías Web Modernas</h1>
+            <p class="lead">Explora las últimas tecnologías para el desarrollo web</p>
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#infoModal">
+                Más información
+            </button>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Temas Principales</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="img/API_P.png" class="card-img-top" alt="Web APIs">
+                        <div class="card-body">
+                            <h5 class="card-title">Web APIs</h5>
+                            <p class="card-text">Interfaces de programación de aplicaciones para la web que permiten la comunicación entre sistemas.</p>
+                            <a href="temas/web-apis.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="img/Micro_p.jpg" class="card-img-top" alt="Microservicios">
+                        <div class="card-body">
+                            <h5 class="card-title">Microservicios</h5>
+                            <p class="card-text">Arquitectura que estructura una aplicación como un conjunto de servicios pequeños.</p>
+                            <a href="temas/microservicios.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="img/des_api.png" class="card-img-top" alt="Desarrollo Web API">
+                        <div class="card-body">
+                            <h5 class="card-title">Desarrollo Web API</h5>
+                            <p class="card-text">Proceso de creación de interfaces de programación de aplicaciones para la web.</p>
+                            <a href="temas/desarrollo-web-api.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="img/contenedor_p.jpg" class="card-img-top" alt="Contenedores">
+                        <div class="card-body">
+                            <h5 class="card-title">Manejo de Contenedores</h5>
+                            <p class="card-text">Tecnología de virtualización a nivel de sistema operativo para empaquetar y ejecutar aplicaciones.</p>
+                            <a href="temas/contenedores.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="img/nube_p.jpg" class="card-img-top" alt="Aplicaciones Nube">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplicaciones para la Nube</h5>
+                            <p class="card-text">Desarrollo de software diseñado específicamente para entornos de computación en la nube.</p>
+                            <a href="temas/aplicaciones-nube.html" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Introducción a las Tecnologías Web</h2>
+            <div class="ratio-16x9 text-center align-items-center">
+                <iframe width="900" height="500" src="https://www.youtube.com/embed/4UnSmK5ud_A?si=0DFsfhfZESuBRhcg&amp;start=1"
+                 title="YouTube video player" 
+                 frameborder="0" 
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Formulario de Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contactForm" class="needs-validation" action="mailto:al351710@edu.uaa.mx" method="POST" enctype="text/plain">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                            <div class="invalid-feedback">
+                                Por favor ingresa tu nombre.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Por favor ingresa un email válido.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <select class="form-select" id="asunto" required>
+                                <option value="" selected disabled>Selecciona un asunto</option>
+                                <option value="consulta">Consulta</option>
+                                <option value="soporte">Soporte técnico</option>
+                                <option value="colaboracion">Colaboración</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Por favor selecciona un asunto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="4" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor escribe tu mensaje.
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Tecnologías Web</h5>
+                    <p>Sitio informativo sobre las tecnologías para el desarrollo web.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope me-2"></i>ferbeltran2101@gmail.com</li>
+                        <li><i class="fas fa-phone me-2"></i> +52 55 7608 0585</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Licenciatura en Informática y Tecnologías Computacionales. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Información -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Acerca de este sitio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Este sitio web fue desarrollado como proyecto para la materia de Desarrollo Web de la Licenciatura en Informática y Tecnologías Computacionales.</p>
+                    <p>El objetivo es presentar información sobre las tecnologías web modernas como Web APIs, microservicios, contenedores y desarrollo para la nube.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="contactoModal" tabindex="-1" aria-labelledby="contactoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="modalNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="modalNombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="modalEmail">
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalMensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="modalMensaje" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
