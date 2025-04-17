@@ -110,3 +110,17 @@ footer a:hover {
         font-size: 2.5rem;
     }
 }
+
+
+.text-purple {
+    color: #6f42c1;
+}
+.bg-purple {
+    background-color: #6f42c1;
+}
+.accordion-button:not(.collapsed) {
+    font-weight: 500;
+}
+.accordion-body {
+    font-size: 0.95rem;
+}

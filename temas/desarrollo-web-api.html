@@ -158,30 +158,6 @@ app.listen(port, () => console.log(`Servidor escuchando en puerto ${port}...`));
                         <li class="list-group-item">Implementar paginación para colecciones grandes</li>
                         <li class="list-group-item">Proporcionar documentación completa</li>
                     </ul>
-
-                    <h3>¿Qué es un JSON Web Token (JWT)?</h3>
-                    <p class="lead">Un JSON Web Token (JWT) es un formato estándar para enviar información de forma segura entre dos partes (como un cliente y un servidor) usando JSON y firmas digitales.
-                                    Se usa principalmente para autenticación y autorización, es decir, para verificar la identidad de un usuario y permitirle acceder a ciertas partes de una aplicación (por ejemplo, un panel de usuario o una API protegida).</p>
-                    <h3>¿Para qué se usa un JWT?</h3>
-                                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Autenticación</h5>
-                                    <p class="card-text">Después de iniciar sesión correctamente, el servidor genera un JWT y se lo devuelve al cliente.
-                                        El cliente lo guarda (en localStorage, por ejemplo) y lo envía en cada solicitud protegida.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Autorización</h5>
-                                    <p class="card-text">El servidor valida el token. Si es válido, permite el acceso a rutas privadas, de lo contrario, responde con "No autorizado".</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
                     <h3>Video tutorial</h3>
                     <div class="ratio ratio-16x9 mb-4">

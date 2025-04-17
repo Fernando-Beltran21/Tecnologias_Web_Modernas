@@ -181,6 +181,138 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <h3>¿Qué es un JSON Web Token (JWT)?</h3>
+                    <p class="lead">Un JSON Web Token (JWT) es un formato estándar para enviar información de forma segura entre dos partes (como un cliente y un servidor) usando JSON y firmas digitales.
+                                    Se usa principalmente para autenticación y autorización, es decir, para verificar la identidad de un usuario y permitirle acceder a ciertas partes de una aplicación (por ejemplo, un panel de usuario o una API protegida).</p>
+                    <h3>¿Para qué se usa un JWT?</h3>
+                                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Autenticación</h5>
+                                    <p class="card-text">Después de iniciar sesión correctamente, el servidor genera un JWT y se lo devuelve al cliente.
+                                        El cliente lo guarda (en localStorage, por ejemplo) y lo envía en cada solicitud protegida.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Autorización</h5>
+                                    <p class="card-text">El servidor valida el token. Si es válido, permite el acceso a rutas privadas, de lo contrario, responde con "No autorizado".</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion mb-5" id="apisAccordion">
+    
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="restHeading">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#restCollapse">
+                                        <i class="fas fa-exchange-alt me-2 text-success"></i> API REST
+                                    </button>
+                                </h2>
+                                <div id="restCollapse" class="accordion-collapse collapse show" aria-labelledby="restHeading" data-bs-parent="#apisAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <span class="badge bg-success">JSON</span>
+                                            <span class="badge bg-primary">HTTP</span>
+                                            <span class="badge bg-secondary">Stateless</span>
+                                        </div>
+                                        <p>Arquitectura basada en recursos y métodos HTTP estándar.</p>
+                                        <h6 class="mt-3">Métodos principales:</h6>
+                                        <div class="d-flex flex-wrap gap-1 mb-3">
+                                            <span class="badge bg-primary">GET</span>
+                                            <span class="badge bg-success">POST</span>
+                                            <span class="badge bg-warning text-dark">PUT/PATCH</span>
+                                            <span class="badge bg-danger">DELETE</span>
+                                        </div>
+                                        <p class="mb-1"><strong>Ventaja:</strong> Simple y ampliamente adoptado.</p>
+                                        <p><strong>Uso típico:</strong> APIs públicas, servicios web.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="soapHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#soapCollapse">
+                                        <i class="fas fa-envelope me-2 text-secondary"></i> SOAP
+                                    </button>
+                                </h2>
+                                <div id="soapCollapse" class="accordion-collapse collapse" aria-labelledby="soapHeading" data-bs-parent="#apisAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <span class="badge bg-secondary">XML</span>
+                                            <span class="badge bg-primary">HTTP/SMTP</span>
+                                            <span class="badge bg-dark">Protocolo</span>
+                                        </div>
+                                        <p>Protocolo estricto con estructura definida por WSDL.</p>
+                                        <h6 class="mt-3">Características:</h6>
+                                        <ul class="mb-3">
+                                            <li>Seguridad integrada (WS-Security)</li>
+                                            <li>Transacciones ACID</li>
+                                            <li>Operaciones definidas</li>
+                                        </ul>
+                                        <p class="mb-1"><strong>Ventaja:</strong> Estándar empresarial seguro.</p>
+                                        <p><strong>Uso típico:</strong> Sistemas bancarios, empresariales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="graphqlHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#graphqlCollapse">
+                                        <i class="fas fa-project-diagram me-2 text-purple"></i> GraphQL
+                                    </button>
+                                </h2>
+                                <div id="graphqlCollapse" class="accordion-collapse collapse" aria-labelledby="graphqlHeading" data-bs-parent="#apisAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <span class="badge bg-purple text-white">GraphQL</span>
+                                            <span class="badge bg-success">JSON</span>
+                                            <span class="badge bg-primary">HTTP</span>
+                                        </div>
+                                        <p>Lenguaje de consulta para APIs con un único endpoint.</p>
+                                        <h6 class="mt-3">Principales conceptos:</h6>
+                                        <ul class="mb-3">
+                                            <li>Queries (consultas)</li>
+                                            <li>Mutations (cambios)</li>
+                                            <li>Subscriptions (eventos)</li>
+                                        </ul>
+                                        <p class="mb-1"><strong>Ventaja:</strong> Obten solo los datos necesarios.</p>
+                                        <p><strong>Uso típico:</strong> Apps complejas, móviles.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Acordeón WebSocket -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="wsHeading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wsCollapse">
+                                        <i class="fas fa-plug me-2 text-info"></i> WebSocket
+                                    </button>
+                                </h2>
+                                <div id="wsCollapse" class="accordion-collapse collapse" aria-labelledby="wsHeading" data-bs-parent="#apisAccordion">
+                                    <div class="accordion-body">
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            <span class="badge bg-info text-dark">ws://</span>
+                                            <span class="badge bg-success">wss://</span>
+                                            <span class="badge bg-secondary">Bidireccional</span>
+                                        </div>
+                                        <p>Protocolo para comunicación persistente y en tiempo real.</p>
+                                        <h6 class="mt-3">Características:</h6>
+                                        <ul class="mb-3">
+                                            <li>Conexión persistente</li>
+                                            <li>Baja latencia</li>
+                                            <li>Comunicación full-duplex</li>
+                                        </ul>
+                                        <p class="mb-1"><strong>Ventaja:</strong> Ideal para tiempo real.</p>
+                                        <p><strong>Uso típico:</strong> Chats, notificaciones, juegos.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                     
                     <h3>Video explicativo</h3>
@@ -191,27 +323,6 @@
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                         referrerpolicy="strict-origin-when-cross-origin" 
                         allowfullscreen></iframe>
-                    </div>
-                    
-                    <div class="accordion mb-5" id="apiAccordion">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                    Tipos de Web APIs
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#apiAccordion">
-                                <div class="accordion-body">
-                                    <p>Existen varios tipos de APIs web según su arquitectura y protocolos:</p>
-                                    <ul>
-                                        <li><strong>REST</strong>: La más común, usa HTTP y JSON</li>
-                                        <li><strong>SOAP</strong>: Protocolo más antiguo basado en XML</li>
-                                        <li><strong>GraphQL</strong>: Alternativa moderna a REST</li>
-                                        <li><strong>WebSocket</strong>: Para conexiones persistentes</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </article>
             </div>
